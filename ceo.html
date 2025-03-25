@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO Message</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .ceo-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            width: 100%;
+            gap: 30px;
+            flex-direction: row; /* Default: Image on Left */
+        }
+
+        .ceo-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .ceo-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 12px; /* Square Image */
+            object-fit: cover;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .ceo-image img:hover {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .ceo-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .ceo-text {
+            flex: 1;
+        }
+
+        .ceo-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .ceo-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* On Mobile: CEO image moves to the top */
+        @media (max-width: 768px) {
+            .ceo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ceo-image img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ceo-container">
+        <div class="ceo-image">
+            <img src="D:\ALIF\Offical\Website\new march website\ceo1.png" alt="CEO Photo">
+            <div class="ceo-name">John Doe - CEO</div>
+        </div>
+        <div class="ceo-text">
+            <h2>Message from Our CEO</h2>
+            <p>At Alif Edu, we believe in the power of education to transform lives. Our mission is to provide quality learning experiences that inspire and empower students. Together, we are shaping the future of education.</p>
+        </div>
+    </div>
+
+</body>
+</html>

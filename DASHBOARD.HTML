@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .classroom-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .classroom-btn {
+            background: linear-gradient(145deg, #0056b3, #003d80);
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .classroom-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .remove-btn {
+            background: red;
+            color: white;
+            font-size: 14px;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        .dashboard-container {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dashboard-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .dashboard-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dashboard-btn:hover {
+            background: #0056b3;
+        }
+
+        .actions {
+            margin-bottom: 20px;
+        }
+
+        .actions button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .student-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove-student {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #001F3F;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            display: block;
+            background: linear-gradient(145deg, #002b5c, #001F3F);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .sidebar a:hover {
+            transform: translateX(5px);
+            background: linear-gradient(145deg, #001F3F, #002b5c);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Content Section */
+        .content {
+            margin-left: 270px;
+            width: 100%;
+            padding: 30px;
+        }
+
+        /* Global Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #001F3F;
+            color: white;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 60%;
+            margin: 100px auto;
+            text-align: left;
+        }
+
+        .profile-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .upload-btn {
+            margin-top: 8px;
+            background: #001F3F;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .profile-details {
+            text-align: left;
+        }
+
+        .profile-details label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .profile-details input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .edit-btn, .save-btn {
+            background: #001F3F;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .edit-btn:hover, .save-btn:hover {
+            background: #003366;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        
+        
+    </div>
+    <div class="sidebar">
+        <h2>Edu Guide</h2>
+        <a href="D:\ALIF\Offical\Website\new march website\DASHBOARD.HTML">Dashboard</a>
+        <a href="D:\ALIF\Offical\Website\new march website\PROFILEEDUGUEIDE.HTML">Profile</a>
+        <a href="D:\ALIF\Offical\Website\new march website\CLASSGUDUIDE.HTML">Classroom Details</a>
+        <a href="D:\ALIF\Offical\Website\new march website\login.html">Log Out</a>
+        
+    </div>
+     <!-- Global Header -->
+     <div class="header">
+        <div class="logo">Alif Edu Guide</div>
+        <div class="profile-header">
+            <span id="displayName">John Doe</span>
+            <img id="headerProfilePic" src="default-profile.png" alt="Profile">
+        </div>
+    </div>
+    <!-- Profile Content -->
+    <div class="profile-container">
+        
+    <h2>Dashboard</h2>
+    <h2>Quick Acces</h2>
+
+    <!-- Add Classroom Button -->
+    <div class="actions">
+        <button onclick="addClassroom()">➕ Add Classroom</button>
+    </div>
+
+    <!-- Classroom Buttons -->
+    <div class="classroom-container" id="classroomContainer">
+        <!-- Dynamic Classrooms -->
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard-container" id="dashboard">
+        <h3 id="dashboardTitle"></h3>
+
+        <div class="dashboard-buttons">
+            <button class="dashboard-btn" onclick="alert('Log Book Opened')">Log Book</button>
+            <button class="dashboard-btn" onclick="alert('Student Performance Opened')">Student Performance</button>
+            <button class="dashboard-btn" onclick="alert('Parent Communication Opened')">Parent Communication</button>
+            <button class="dashboard-btn" onclick="alert('Timetable Opened')">Timetable</button>
+            <button class="dashboard-btn" onclick="alert('Monthly Summary Opened')">Monthly Summary</button>
+            <button class="D:\ALIF\Offical\Website\new march website\attendance.html" onclick="openAttendance()"> Attendance</button>
+        </div>
+
+        <h4>Students in <span id="classroomName"></span></h4>
+        <ul class="student-list" id="studentList">
+            <!-- Student Names Here -->
+        </ul>
+        <button onclick="addStudent()">➕ Add Student</button>
+    </div>
+
+    <script>
+        let classrooms = [];
+
+        function addClassroom() {
+            let className = prompt("Enter Classroom Name:");
+            if (className) {
+                let classroomContainer = document.getElementById("classroomContainer");
+                let classroomBtn = document.createElement("button");
+                classroomBtn.className = "classroom-btn";
+                classroomBtn.innerText = className + " (0 Students)";
+                classroomBtn.setAttribute("onclick", `showDashboard('${className}')`);
+
+                let removeBtn = document.createElement("button");
+                removeBtn.className = "remove-btn";
+                removeBtn.innerText = "X";
+                removeBtn.onclick = function () {
+                    classroomBtn.remove();
+                    removeBtn.remove();
+                    classrooms = classrooms.filter(c => c.name !== className);
+                };
+
+                classroomBtn.appendChild(removeBtn);
+                classroomContainer.appendChild(classroomBtn);
+                classrooms.push({ name: className, students: [] });
+            }
+        }
+
+        function showDashboard(className) {
+            document.getElementById("dashboardTitle").innerText = className + " - Classroom Dashboard";
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("classroomName").innerText = className;
+            document.getElementById("studentList").innerHTML = "";
+            let classroom = classrooms.find(c => c.name === className);
+            classroom.students.forEach(student => addStudentToList(student));
+        }
+
+        function addStudent() {
+            let studentName = prompt("Enter Student Name:");
+            if (studentName) {
+                let classroom = classrooms.find(c => c.name === document.getElementById("classroomName").innerText);
+                classroom.students.push(studentName);
+                addStudentToList(studentName);
+            }
+        }
+
+        function addStudentToList(studentName) {
+            let studentList = document.getElementById("studentList");
+            let li = document.createElement("li");
+            li.innerText = studentName;
+
+            let removeBtn = document.createElement("button");
+            removeBtn.className = "remove-student";
+            removeBtn.innerText = "Remove";
+            removeBtn.onclick = function () {
+                li.remove();
+                let classroom = classrooms.find(c => c.name === document.getElementById("classroomName").innerText);
+                classroom.students = classroom.students.filter(s => s !== studentName);
+            };
+
+            li.appendChild(removeBtn);
+            studentList.appendChild(li);
+        }
+
+        function openAttendance() {
+            let classroom = document.getElementById("classroomName").innerText;
+            let students = classrooms.find(c => c.name === classroom).students;
+            let studentNames = students.join(",");
+            window.location.href = `attendance.html?classroom=${classroom}&students=${studentNames}`;
+        }
+
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const className = urlParams.get("class");
+        if (className) {
+            document.getElementById("classroomTitle").innerText = className;
+        }
+    });
+</script>
+
+</body>
+</html>

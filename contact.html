@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar with Navy Blue</title>
+    <style>
+        /* Styling for the menu bar */
+        .menu-bar {
+            background-color: #ffd500; /* Navy Blue */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center; /* Centered in the top */
+            align-items: center;
+            border-radius: 50px; /* Curved rectangle effect */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+       
+        /* Styling for the buttons */
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(145deg, #002b5c, #001F3F);
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        /* 3D Hover Effect */
+        .menu-bar a:hover {
+            background: linear-gradient(145deg, #001F3F, #002b5c);
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            width: 60px;
+            height: auto;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <img src="D:\ALIF\Offical\CURVED LOGO\ALIF.png" alt="Logo" class="logo">
+
+    <!-- Menu Bar -->
+    <nav class="menu-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+</body>
+
+</html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alif Edu - Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            width: 30%;
+            position: relative;
+        }
+
+        .card img {
+    width: 100px;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    display: block;  /* Ensures the image is treated as a block element */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* 3D Hover Effect */
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card:hover img {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+            }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #002147;
+        }
+        .curved-input {
+            border-radius: 25px;
+            padding: 12px;
+            border: 2px solid #FFD700;
+            background: white;
+        }
+        .course-box {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .course-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .course-box:active {
+            transform: scale(1.1);
+        }
+        .course-box img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+   <style>
+            
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .message-container {
+            width: 100%;
+            padding: 40px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px; /* Adds space between sections */
+        }
+        .founder-container {
+            background: white;
+            width: 100vw; /* Full width */
+            min-height: 250px;
+            display: flex;
+            flex-direction: row; /* Image on left */
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+            padding: 40px 0;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .founder-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .founder-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
+        .founder-image img:hover {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .founder-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .founder-text {
+            flex: 1;
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .founder-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .founder-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* On Mobile: Image moves to the top */
+        @media (max-width: 768px) {
+            .founder-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .founder-text {
+                text-align: center;
+                max-width: 90%;
+            }
+
+            .founder-image img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+</style>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.ceo-container {
+    background: white;
+    width: 100vw; /* Full width */
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Prevents overlapping */
+}
+
+.ceo-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ceo-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.ceo-image img:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.ceo-name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ceo-text {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.ceo-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ceo-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* On Mobile: CEO image moves to the top */
+@media (max-width: 768px) {
+    .ceo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .ceo-text {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .ceo-image img {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Width Image Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100vw;
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        /* Slider Images */
+        .slide {
+            position: absolute;
+            width: 100vw;
+            height: 90vh;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .active {
+            opacity: 1;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 5px;
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <img src="D:/ALIF/Offical/Website/new march website/alif edu (600 x 300 px) (2).png" class="slide active">
+        <img src="D:/ALIF/Offical/Website/new march website/alif edu (600 x 300 px) (4).png" class="slide">
+        <img src="D:/ALIF/Offical/Website/new march website/alif edu (600 x 300 px) (600 x 300 px).png" class="slide">
+        <img src="D:/ALIF/Offical/Website/new march website/alif edu (600 x 300 px) (4).png" class="slide">
+        
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        function changeSlide(step) {
+            slideIndex = (slideIndex + step + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function autoSlide() {
+            changeSlide(1);
+            setTimeout(autoSlide, 3000);
+        }
+
+        setTimeout(autoSlide, 3000);
+    </script>
+
+</body>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D Announcement Banner</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                display: BLOCK;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+    
+            .announcement-box {
+            position: absolute;
+            top: 85%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            min-width: 300px;
+            max-width: 500px;
+            animation: float 4s infinite alternate ease-in-out;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+            @keyframes float {
+            0% {
+                transform: translateY(0) perspective(500px) rotateX(10deg);
+            }
+            100% {
+                transform: translateY(15px) perspective(500px) rotateX(5deg);
+            }
+        }
+            .hidden {
+                opacity: 50;
+                transform: translateY(-20px) perspective(500px) rotateX(20deg);
+            }
+        </style>
+    </head>
+    <div id="announcement" class="announcement-box"></div>
+
+    <script>
+        const messages = [
+            "🚀 Admissions Open for 2025-26! <a href='#' style='color: yellow;'>Apply Now</a>",
+            "📚 New Courses Added! <a href='#' style='color: yellow;'>Check Here</a>",
+            "🎉 Scholarship Test Registration Open! <a href='#' style='color: yellow;'>Register Now</a>"
+        ];
+
+        let index = 0;
+        const announcementBox = document.getElementById("announcement");
+
+        function showMessage() {
+            announcementBox.classList.add("hidden"); 
+
+            setTimeout(() => {
+                announcementBox.innerHTML = messages[index];
+                announcementBox.classList.remove("hidden"); 
+
+                index = (index + 1) % messages.length;
+                setTimeout(showMessage, 4000); 
+            }, 500);
+        }
+
+        showMessage();
+    </script>
+
+</body>
+ <!-- Logo -->
+ <img src="D:\ALIF\Offical\CURVED LOGO\ALIF.png" alt="Logo" class="logo">
+</html>
+
+<body>
+    
+    <nav class="menu-bar">
+        <a href="D:\ALIF\Offical\Website\new march website\index.html ">Home</a>
+        <a href="D:\ALIF\Offical\Website\new march website\ABOUTUS.HTML " >About Us</a>
+        <a href="D:\ALIF\Offical\Website\new march website\coursepge.html">Courses</a>
+        <a href="D:\ALIF\Offical\Website\new march website\contact.html">Contact Us</a>
+        <a href="D:\ALIF\Offical\Website\new march website\login.html">Login</a>
+    </nav>
+    
+    <section class="h-screen flex flex-col justify-center items-center px-6 py-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">We Help You to Learn Better</h2>
+        <div class="about-container">
+            <div class="card">
+                <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+                <h2>Vision</h2>
+                <p>A world where education adapts to each learner’s unique needs and aspirations.</p>
+            </div>
+    
+            <div class="card">
+                <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+                <h2>Mission</h2>
+                <p>Making quality education accessible, personalized, and effective. Nurturing a lifelong passion for learning.</p>
+            </div>
+    
+            <div class="card">
+                 <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+                <h2>Values</h2>
+                <p>Empathy, Empowerment, and Exploration.</p>
+            </div>
+        </div>
+        <div class="ceo-container">
+            <div class="ceo-image">
+                <img src="D:\ALIF\Offical\Website\new march website\ceo1.png" alt="CEO Photo">
+                <div class="ceo-name">Mr.Aflah Zaman.K - CEO</div>
+            </div>
+            <div class="founder-container">
+                <div class="founder-image">
+                    <img src="D:\ALIF\Offical\Website\new march website\founder.png" alt="Founder Photo">
+                    <div class="founder-name">Mr. Aslah Khan.K - Founder</div>
+                </div>
+                <div class="founder-text">
+                    <h2>Message from Our Founder</h2>
+                    <p>At Alif Edu, we believe in the power of education to transform lives. Our mission is to provide quality learning experiences that inspire and empower students. Together, we are shaping the future of education.</p>
+                </div>
+            </div>
+            <div class="ceo-text">
+                <h2>Message from Our CEO</h2>
+                <p>At Alif Edu, we believe in the power of education to transform lives. Our mission is to provide quality learning experiences that inspire and empower students. Together, we are shaping the future of education.</p>
+            </div>
+        </div>
+        
+    </section>   
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>📩 <a href="mailto:principal@alifedu.org">principal@alifedu.org</a> | 
+           📩 <a href="mailto:info@alifedu.org">info@alifedu.org</a> | 
+           📞 <a href="tel:+918590127323">+91 8590127323</a>
+        </p>
+        <p>&copy; 2025 Alif Edu. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: #00c7c4;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    footer a {
+        color:  rgb(0, 28, 95);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+
