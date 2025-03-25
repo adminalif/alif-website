@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Alif Edu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            width: 30%;
+            position: relative;
+        }
+
+        .card img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            transform-style: preserve-3d;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* 3D Hover Effect */
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card:hover img {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-container">
+        <div class="card">
+            <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+            <h2>Vision</h2>
+            <p>A world where education adapts to each learner’s unique needs and aspirations.</p>
+        </div>
+
+        <div class="card">
+            <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+            <h2>Mission</h2>
+            <p>Making quality education accessible, personalized, and effective. Nurturing a lifelong passion for learning.</p>
+        </div>
+
+        <div class="card">
+             <img src="D:\ALIF\Offical\CURVED LOGO\AL ILM.png " alt="Vision"> 
+            <h2>Values</h2>
+            <p>Empathy, Empowerment, and Exploration.</p>
+        </div>
+    </div>
+
+</body>
+</html>

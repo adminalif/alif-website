@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Alif Edu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+            transform: perspective(800px) rotateX(10deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: perspective(800px) rotateX(0deg) scale(1.1);
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            background: #f8f8f8;
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #0077B6;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background: #005f8b;
+        }
+
+        .role-selection {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .role-selection select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        .options-container {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .option-btn {
+            width: 100%;
+            padding: 10px;
+            background: #90E0EF;
+            border: none;
+            color: #000;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 5px;
+            display: none; /* Hidden initially */
+        }
+
+        .option-btn:hover {
+            background: #48CAE4;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="logo.png" class="logo" alt="Alif Edu Logo">
+
+        <input type="text" class="input-box" placeholder="Username or Staff ID">
+        <input type="password" class="input-box" placeholder="Password">
+        
+        <div class="role-selection">
+            <label>Select Role:</label>
+            <select id="role" onchange="showOptions()">
+                <option value="">-- Select Role --</option>
+                <option value="admin">Admin</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+                <option value="parent">Parent</option>
+            </select>
+        </div>
+
+        <button class="login-btn" onclick="login()">Login</button>
+
+        <div class="options-container">
+            <button class="option-btn" id="option1"></button>
+            <button class="option-btn" id="option2"></button>
+        </div>
+    </div>
+
+    <script>
+        function showOptions() {
+            let role = document.getElementById("role").value;
+            let option1 = document.getElementById("option1");
+            let option2 = document.getElementById("option2");
+
+            option1.style.display = "none";
+            option2.style.display = "none";
+
+            if (role === "admin") {
+                option1.innerText = "Direct to App";
+                option1.setAttribute("onclick", "window.location.href='admin-app.html'");
+                option2.innerText = "Edu Guide Login";
+                option2.setAttribute("onclick", "window.location.href='edu-guide.html'");
+            } 
+            else if (role === "teacher") {
+                option1.innerText = "Direct to App";
+                option1.setAttribute("onclick", "window.location.href='teacher-app.html'");
+                option2.innerText = "Edu Guide Login";
+                option2.setAttribute("onclick", "window.location.href='D:\ALIF\Offical\Website\new march website\DASHBOARD.HTML'");
+            } 
+            else if (role === "student") {
+                option1.innerText = "Alif App";
+                option1.setAttribute("onclick", "window.location.href='student-app.html'");
+                option2.innerText = "Student Progress Report";
+                option2.setAttribute("onclick", "window.location.href='progress-report.html'");
+            } 
+            else if (role === "parent") {
+                option1.innerText = "Alif App";
+                option1.setAttribute("onclick", "window.location.href='parent-app.html'");
+                option2.innerText = "Student Progress Report";
+                option2.setAttribute("onclick", "window.location.href='progress-report.html'");
+            }
+        }
+
+        function login() {
+            let role = document.getElementById("role").value;
+            let options = document.querySelector(".options-container");
+
+            if (role) {
+                options.style.display = "block"; // Show options after login
+                document.getElementById("option1").style.display = "block";
+                document.getElementById("option2").style.display = "block";
+            } else {
+                alert("Please select a role before logging in.");
+            }
+        }
+    </script>
+
+</body>
+</html>

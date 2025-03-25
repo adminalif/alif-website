@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Guide - Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #001F3F;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            display: block;
+            background: linear-gradient(145deg, #002b5c, #001F3F);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .sidebar a:hover {
+            transform: translateX(5px);
+            background: linear-gradient(145deg, #001F3F, #002b5c);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Content Section */
+        .content {
+            margin-left: 270px;
+            width: 100%;
+            padding: 30px;
+        }
+
+        /* Global Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #001F3F;
+            color: white;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 60%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .profile-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .upload-btn {
+            margin-top: 8px;
+            background: #001F3F;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .profile-details {
+            text-align: left;
+        }
+
+        .profile-details label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .profile-details input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .edit-btn, .save-btn {
+            background: #001F3F;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .edit-btn:hover, .save-btn:hover {
+            background: #003366;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+ 
+        
+    </div>
+    <div class="sidebar">
+        <h2>Edu Guide</h2>
+        <a href="D:\ALIF\Offical\Website\new march website\DASHBOARD.HTML">Dashboard</a>
+        <a href="D:\ALIF\Offical\Website\new march website\PROFILEEDUGUEIDE.HTML">Profile</a>
+        <a href="D:\ALIF\Offical\Website\new march website\CLASSGUDUIDE.HTML">Classroom Details</a>
+        <a href="D:\ALIF\Offical\Website\new march website\login.html">Log Out</a>
+        
+    </div>
+    
+    <!-- Global Header -->
+    <div class="header">
+        <div class="logo">Alif Edu Guide</div>
+        <div class="profile-header">
+            <span id="displayName">John Doe</span>
+            <img id="headerProfilePic" src="default-profile.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="profile-container">
+        <h2>Profile</h2>
+        
+        <div class="profile-image-container">
+            <img id="profilePic" src="default-profile.png" alt="Profile Image" class="profile-image">
+            <input type="file" id="uploadPhoto" class="hidden" accept="image/*">
+            <button class="upload-btn" onclick="document.getElementById('uploadPhoto').click()">Change Photo</button>
+        </div>
+
+            <div class="profile-details">
+                <label>Name:</label>
+                <input type="text" id="name" value="John Doe" disabled>
+    
+                <label>Email:</label>
+                <input type="email" id="email" value="johndoe@example.com" disabled>
+    
+                <label>Phone:</label>
+                <input type="text" id="phone" value="+91 9876543210" disabled>
+    
+                <label>Address:</label>
+                <input type="text" id="address" value="123, Main Street, City" disabled>
+    
+                <label>Staff ID:</label>
+                <input type="text" id="staffId" value="ALIF1001" disabled>
+    
+                <label>Incharge:</label>
+                <input type="text" id="incharge" value="Mathematics Department" disabled>
+    
+                <label>Qualification:</label>
+                <input type="text" id="qualification" value="M.Sc Mathematics" disabled>
+    
+                <label>Joining Date:</label>
+                <input type="date" id="joiningDate" value="2020-06-15" disabled>
+    
+                <label>Date of Birth:</label>
+                <input type="date" id="dob" value="1990-05-20" disabled>
+    
+                <label>Blood Group:</label>
+                <input type="text" id="bloodGroup" value="O+" disabled>
+            </div>
+    
+
+            <button class="edit-btn" id="editProfile">Edit Profile</button>
+            <button class="save-btn hidden" id="saveProfile">Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        const editBtn = document.getElementById("editProfile");
+        const saveBtn = document.getElementById("saveProfile");
+        const inputs = document.querySelectorAll(".profile-details input");
+        const profilePic = document.getElementById("profilePic");
+        const headerProfilePic = document.getElementById("headerProfilePic");
+        const displayName = document.getElementById("displayName");
+        const uploadPhoto = document.getElementById("uploadPhoto");
+
+        // Enable editing
+        editBtn.addEventListener("click", function() {
+            inputs.forEach(input => input.disabled = false);
+            editBtn.classList.add("hidden");
+            saveBtn.classList.remove("hidden");
+        });
+
+        // Save changes
+        saveBtn.addEventListener("click", function() {
+            inputs.forEach(input => input.disabled = true);
+            editBtn.classList.remove("hidden");
+            saveBtn.classList.add("hidden");
+
+            // Store updated details in local storage
+            localStorage.setItem("teacherName", document.getElementById("name").value);
+            localStorage.setItem("profilePic", profilePic.src);
+
+            // Update header profile details
+            displayName.textContent = document.getElementById("name").value;
+            headerProfilePic.src = profilePic.src;
+        });
+
+        // Load stored details
+        if (localStorage.getItem("teacherName")) {
+            document.getElementById("name").value = localStorage.getItem("teacherName");
+            displayName.textContent = localStorage.getItem("teacherName");
+        }
+
+        if (localStorage.getItem("profilePic")) {
+            profilePic.src = localStorage.getItem("profilePic");
+            headerProfilePic.src = localStorage.getItem("profilePic");
+        }
+
+        // Image Upload & Preview
+        uploadPhoto.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.src = e.target.result;
+                    headerProfilePic.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
