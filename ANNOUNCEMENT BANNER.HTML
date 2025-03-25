@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Announcement Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .announcement-box {
+            position: absolute;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            min-width: 300px;
+            max-width: 500px;
+            transform: perspective(500px) rotateX(10deg);
+            transition: opacity 0.5s, transform 0.5s;
+            animation: float 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) perspective(500px) rotateX(10deg);
+            }
+            100% {
+                transform: translateY(15px) perspective(500px) rotateX(5deg);
+            }
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(-20px) perspective(500px) rotateX(20deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="announcement" class="announcement-box"></div>
+
+    <script>
+        const messages = [
+            "🚀 Admissions Open for 2025-26! <a href='#' style='color: yellow;'>Apply Now</a>",
+            "📚 New Courses Added! <a href='#' style='color: yellow;'>Check Here</a>",
+            "🎉 Scholarship Test Registration Open! <a href='#' style='color: yellow;'>Register Now</a>"
+        ];
+
+        let index = 0;
+        const announcementBox = document.getElementById("announcement");
+
+        function showMessage() {
+            announcementBox.classList.add("hidden");
+
+            setTimeout(() => {
+                announcementBox.innerHTML = messages[index];
+                announcementBox.classList.remove("hidden");
+
+                index = (index + 1) % messages.length;
+                setTimeout(showMessage, 4000);
+            }, 500);
+        }
+
+        showMessage();
+    </script>
+
+</body>
+</html>
