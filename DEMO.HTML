@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alif Edu - Online Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #002147;
+        }
+
+        /* Announcement Banner */
+        .announcement {
+            background: #FFD700;
+            color: #002147;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: scrollText 10s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Styling for the menu bar */
+        .menu-bar {
+            background-color: #001F3F; /* Navy Blue */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(145deg, #002b5c, #001F3F);
+        }
+
+        .menu-bar a:hover {
+            background: linear-gradient(145deg, #001F3F, #002b5c);
+            transform: translateY(-3px);
+        }
+
+        /* Bent Banner */
+        .bent-banner {
+            background: linear-gradient(135deg, #002147 30%, #004080 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            margin-top: 120px;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .bent-banner h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Floating Counter */
+        .floating {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Announcement Banner -->
+    <div class="announcement">
+        📢 Limited Time Offer: Enroll Now & Get 20% Off on All Courses! 🎉
+    </div>
+
+    <!-- Logo -->
+    <img src="D:\ALIF\Offical\CURVED LOGO\ALIF.png" alt="Logo" class="logo">
+
+    <!-- Menu Bar -->
+    <nav class="menu-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <!-- Bent Banner Section -->
+    <div class="bent-banner">
+        <h1>Welcome to Alif Edu</h1>
+        <p>Your gateway to quality online education</p>
+    </div>
+
+    <!-- Course Section -->
+    <section class="h-screen flex flex-col justify-center items-center px-6 py-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">We Help You to Learn Better</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-5xl justify-center">
+
+            <div class="course-box" onclick="showModal('Kinder Pre-School', 'A fun-filled, interactive program for young learners.', 'KINDER-PRE-SCHOOL.HTML')">
+                <img src="D:\ALIF\Offical\CURVED LOGO\KINDER.png" alt="Kinder Pre-School">
+                <p>KINDER PRE SCHOOL</p>
+            </div>
+
+            <div class="course-box" onclick="showModal('Virtual International School', 'An advanced online school with interactive lessons.', 'virtualschool.html')">
+                <img src="D:\ALIF\Offical\CURVED LOGO\ALIF.png" alt="Virtual International School">
+                <p>VIRTUAL INTERNATIONAL SCHOOL</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <h3 id="modalTitle" class="text-xl font-bold"></h3>
+            <p id="modalDescription" class="my-4"></p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded" id="learnMoreBtn">Learn More</button>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal(title, description, pageLink) {
+            document.getElementById("modalTitle").textContent = title;
+            document.getElementById("modalDescription").textContent = description;
+            document.getElementById("learnMoreBtn").onclick = function() {
+                window.location.href = pageLink;
+            };
+            document.getElementById("courseModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("courseModal").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

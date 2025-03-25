@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar with Navy Blue</title>
+    <style>
+        /* Styling for the menu bar */
+        .menu-bar {
+            background-color: #001F3F; /* Navy Blue */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center; /* Centered in the top */
+            align-items: center;
+            border-radius: 50px; /* Curved rectangle effect */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for the buttons */
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(145deg, #002b5c, #001F3F);
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        /* 3D Hover Effect */
+        .menu-bar a:hover {
+            background: linear-gradient(145deg, #001F3F, #002b5c);
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            width: 60px;
+            height: auto;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="D:\ALIF\Offical\CURVED LOGO\ALIF.png" alt="Logo" class="logo">
+
+    <!-- Menu Bar -->
+    <nav class="menu-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+</body>
+</html>

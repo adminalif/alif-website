@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder & Executive Team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff29d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .founder-container {
+            background: rgb(255, 255, 255);
+            width: 100vw;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 0;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .founder-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .founder-image img:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.1);
+        }
+
+        .executive-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .executive-heading::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 10px;
+            background: navy;
+            margin: 8px auto 0;
+            border-radius: 5px;
+        }
+
+        .executive-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 80%;
+            margin-top: 30px;
+        }
+
+        .executive-box {
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .executive-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .executive-box img:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.1);
+        }
+
+        .message {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+        }
+
+        @media (max-width: 768px) {
+            .executive-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="founder-container">
+        <div class="founder-image">
+            <img src="D:\ALIF\Offical\Website\new march website\founder.png" alt="Founder">
+            <div class="founder-name">Mr. Aslah Khan.K - Founder</div>
+        </div>
+        <div class="founder-text message">
+            <h2>Message from Our Founder</h2>
+            <p>At Alif Edu, we are passionate about transforming education and empowering students to achieve their full potential. Our mission is to provide accessible, high-quality learning opportunities that cater to the diverse needs of every learner. With a commitment to innovation and excellence, we strive to create a dynamic educational environment that fosters curiosity, creativity, and lifelong learning. Together, we can build a brighter future through the power of knowledge and education.
+            </p>
+        </div>
+    </div>
+
+    <div class="executive-heading">Our Executives</div>
+
+    <div class="executive-container">
+        <div class="executive-box">
+            <img src="D:\ALIF\Offical\Website\new march website\ceo.png" alt="CEO">
+            <div class="message">
+                <h3>Aflah Zaman.K (CEO)</h3>
+                <p>At Alif Edu, we are dedicated to providing a learning experience that is both innovative and student-centered. Our vision is to create an educational platform where every learner, regardless of background, can thrive and succeed. We believe in the power of personalized education, and through our programs, we aim to nurture talent, inspire curiosity, and build strong foundations for the future.
+                    We are committed to supporting students on their educational journey and helping them unlock their full potential.</p>
+            </div>
+        </div>
+        <div class="executive-box">
+            <img src="cfo.jpg" alt="CFO">
+            <div class="message">
+                <h3>Misfar Puthiyachirakkal (CFO)</h3>
+                <p>Message from the CFO...</p>
+            </div>
+        </div>
+        <div class="executive-box">
+            <img src="D:\ALIF\Offical\Website\new march website\principal.png" alt="Principal">
+            <div class="message">
+                <h3>Abhinav AK (Principal)</h3>
+                <p>Welcome to Alif Edu, where we believe in fostering a nurturing and dynamic learning environment for all students. Our goal is to provide a holistic education that not only focuses on academic excellence but also the personal growth and development of each child. We are committed to shaping young minds, building character, and preparing students for a successful future.
+                    With our dedicated staff and innovative approach, we strive to empower every learner to reach their full potential and make meaningful contributions to society.
+                    Thank you for being part of the Alif Edu community.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="executive-container">
+        <div class="executive-box">
+            <img src="D:\ALIF\Offical\Website\new march website\vice.png" alt="Vice Principal">
+            <div class="message">
+                <h3>Muhammed Fadil (Vice Principal)</h3>
+                <p>Message from the Vice Principal...</p>
+            </div>
+        </div>
+        <div class="executive-box">
+            <img src="D:\ALIF\Offical\Website\new march website\saeed.png" alt="Director">
+            <div class="message">
+                <h3>Saeed Sqafi (Director - Al Ilm Islamic School)</h3>
+                <p>Message from the Director...</p>
+            </div>
+        </div>
+        <div class="executive-box">
+            <img src="D:\ALIF\Offical\Website\new march website\savio.png" alt="Chief Media Editor">
+            <div class="message">
+                <h3>Savio</h3>
+                <p>Message from the Chief Media Editor...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
